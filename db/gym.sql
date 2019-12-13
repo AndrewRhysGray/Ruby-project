@@ -1,8 +1,8 @@
 DROP TABLE bookings;
-DROP TABLE classes;
+DROP TABLE sessions;
 DROP TABLE members;
 
-CREATE TABLE classes
+CREATE TABLE sessions
 (
   id SERIAL primary key,
   name VARCHAR(255) not null
