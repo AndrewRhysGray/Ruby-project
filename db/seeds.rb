@@ -6,6 +6,7 @@ require("pry")
 
 Member.delete_all()
 Session.delete_all()
+Booking.delete_all()
 
 member1 = Member.new({
   "first_name" => "John",
