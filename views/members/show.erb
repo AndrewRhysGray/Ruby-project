@@ -1,0 +1,11 @@
+<h1>Member <%= @member.name %></h1>
+
+<p>DOB: <%= @member.dob %></p>
+
+<h3>Victims:</h3>
+
+<ul>
+  <% @session.members.each do |member| %>
+  <li><%= member.name %></li>
+  <% end %>
+</ul>

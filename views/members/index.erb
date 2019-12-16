@@ -1,0 +1,32 @@
+<h1>Members</h1>
+
+<table>
+  <tr>
+    <th>first_name</th>
+    <th></th>
+    <th>last_name</th>
+    <th></th>
+    <th>DOB</th>
+    <th></th>
+    <th>email</th>
+    <th></th>
+    <th>gender</th>
+    <th></th>
+
+
+
+
+
+
+
+
+
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><a href="/members/<%= member.id %>"><%= member.name %></a></td>
+    <td>|</td>
+    <td><%= member.dob %></td>
+  </tr>
+  <% end %>
+</table>
