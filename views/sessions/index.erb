@@ -8,9 +8,8 @@
   <br>
   <% for session in @sessions do %>
   <tr>
-    <td><a href="/sessions/<%= session.id %>" <%= session.name %></a></td>
+    <td><a href="/sessions/<%= session.id %>"> <%= session.name %></a></td>
     <td>|</td>
-
   </tr>
   <% end %>
 </table>

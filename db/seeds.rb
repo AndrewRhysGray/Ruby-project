@@ -11,7 +11,7 @@ Booking.delete_all()
 member1 = Member.new({
   "first_name" => "John",
   "last_name" => "Doe",
-  "DOB" => "27/03/97",
+  "dob" => "27/03/97",
   "email" => "JonDoe@email.com",
   "gender" => "male"
 })
@@ -22,7 +22,7 @@ member1.save()
 member2 = Member.new({
   "first_name" => "Jane",
   "last_name" => "Doe",
-  "DOB" => "26/03/97",
+  "dob" => "26/03/97",
   "email" => "JaneDoe@email.com",
   "gender" => "female"
 })
@@ -33,7 +33,7 @@ member2.save()
 member3 = Member.new({
   "first_name" => "Dave",
   "last_name" => "Smith",
-  "DOB" => "28/03/97",
+  "dob" => "28/03/97",
 "email" => "DaveSmith@email.com",
 "gender" => "male"
 })
@@ -58,6 +58,13 @@ session3 = Session.new({
 })
 
 session3.save()
+
+booking1 = Booking.new({
+  "member_id" =>  member1.id
+  "session_id" => session1.id
+})
+
+booking1.save()
 
 
 

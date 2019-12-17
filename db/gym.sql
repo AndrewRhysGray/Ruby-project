@@ -21,6 +21,6 @@ CREATE TABLE members
 CREATE TABLE bookings
 (
   id SERIAL primary key,
-  members_id INT references sessions(id),
-  sessions_id INT references sessions(id)
+  member_id INT references sessions(id),
+  session_id INT references sessions(id)
 );

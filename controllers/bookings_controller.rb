@@ -16,7 +16,7 @@ get '/bookings/new' do
   erb(:"bookings/new")
 end
 
-post '/bitings/new' do
+post '/bookings/new' do
   booking = Booking.new( params)
   booking.save
   redirect to ("/bookings")

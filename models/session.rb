@@ -26,12 +26,17 @@ class Session
   end
 
   def self.all()
-    sql = "SELECT * FROM sessions"
+    sql = "SELECT FROM sessions"
     results = SqlRunner.run( sql )
     return results.map { |member| Session.new( member ) }
   end
 
-
+  def members
+    sql = "SELECT m.* FROM members m INNER JOIN bookings b ON member_id = m.id WHERE b.session_id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return members.map { |member| Member.new( member ) }
+  end
 
 
   def self.find( id )

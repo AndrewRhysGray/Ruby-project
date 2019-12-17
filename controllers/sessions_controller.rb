@@ -1,6 +1,5 @@
 require( 'pry' )
 require_relative( '../models/session.rb' )
-also_reload( '../models/*' )
 
 get '/sessions' do
   @sessions = Session.all()
@@ -8,6 +7,6 @@ get '/sessions' do
 end
 
 get '/sessions/:id' do
-  @sessions = Session.find(params['id'].to_i)
+  @session = Session.find(params['id'].to_i)
   erb(:"sessions/show")
 end

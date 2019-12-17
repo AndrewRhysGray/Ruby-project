@@ -4,12 +4,12 @@ class Member
 
 
   attr_reader( :id )
-  attr_accessor( :first_name, :last_name, :DOB, :email, :gender )
+  attr_accessor( :first_name, :last_name, :dob, :email, :gender )
 
   def initialize(options)
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @DOB = options['DOB'].to_s
+    @dob = options['dob'].to_s
     @email = options['email']
     @gender = options['gender']
     @id = options['id'].to_i if options ['id']
@@ -21,7 +21,7 @@ class Member
     (
       first_name,
       last_name,
-      DOB,
+      dob,
       email,
       gender
     )
@@ -30,7 +30,7 @@ class Member
       $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@first_name, @last_name, @DOB, @email, @gender]
+    values = [@first_name, @last_name, @dob, @email, @gender]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
