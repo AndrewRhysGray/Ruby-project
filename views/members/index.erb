@@ -1,8 +1,27 @@
-
-    <% for member in @members %>
-     <%= member.first_name %>
-     <%= member.last_name %>
-     <%= member.gender %>
-     <%= member.email %>
-     <%= member.dob %>
-      <% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Members!</h1>
+    <div class="btn--wrapper">
+      <a class="btn btn--action" href="/members/new">New member!</a>
+    </div>
+    <div class="members-container">
+      <ul>
+        <% for member in @members %>
+        <div class="members-list">
+          <li><%= member.first_name %></li>
+          <li><%= member.last_name %></li>
+          <li><%= member.gender %></li>
+          <li><%= member.email %></li>
+          <li><%= member.dob %></li>
+        </div>
+        <br>
+        <% end %>
+      </ul>
+    </div>
+  </body>
+</html>

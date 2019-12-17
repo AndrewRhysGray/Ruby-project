@@ -1,22 +1,20 @@
-<h1>Bookings</h1>
-
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/bookings/new">New member!</a>
-</p>
-
-<ul>
-  <% for booking in @bookings %>
-  <li>
-    <p><%= booking.member.first_name %>
-      <%= booking.member.last_name %>
-      <%= booking.member.age %>
-      <%= booking.member.dob %>
-       <%= booking.session.name %> </p>
-    <p>
-      <form action="/bookings/<%= booking.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-    </p>
-  </li>
-  <% end %>
-</ul>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Bookings</h1>
+    <ul>
+      <% for booking in @bookings %>
+      <li>
+            <%= booking.member.first_name %>
+            <%= booking.member.last_name %>
+            <%# booking.member.age
+            booking.member.dob %>
+             <%= booking.session.name %>
+      <% end %>
+    </ul>
+  </body>
+</html>

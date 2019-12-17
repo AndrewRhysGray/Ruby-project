@@ -1,5 +1,18 @@
-<h1>Sessions</h1>
 
-<% for session in @sessions %>
- <%= session.name %>
-  <% end %>
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  Different classes on offer
+  <body>
+    <ul>
+       <% for session in @sessions %>
+      <li> <%= session.name %>
+           <% end %> </li>
+    </ul>
+  </body>
+</html>
