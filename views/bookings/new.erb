@@ -5,7 +5,7 @@
   Select a member:
     <select name="member_id">
       <% for member in @members %>
-      <option value="<%= member.id %>"><%= member.name %></option>
+      <option value="<%= member.id %>"><%= member.first_name %></option>
       <% end %>
     </select>
   </label>
@@ -14,10 +14,10 @@
     Select a session:
     <select name="">
       <% for session in @session %>
-      <option value="<%= victim.id %>"><%= victim.name %></option>
+      <option value="<%= session.id %>"><%= session.name %></option>
       <% end %>
     </select>
   </label>
 
-  <input class="btn btn--action" type='submit' value="Bite!">
+  <input class="btn btn--action" type='submit' value="!">
 </form>

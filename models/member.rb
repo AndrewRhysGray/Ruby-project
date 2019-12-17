@@ -36,18 +36,11 @@ class Member
   end
 
 
-
-
-
-
-
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run( sql )
     return results.map { |member| Member.new( member ) }
   end
-
-
 
 
   def self.find( id )

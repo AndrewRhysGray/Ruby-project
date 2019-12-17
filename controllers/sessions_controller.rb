@@ -1,5 +1,13 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' )
 require( 'pry' )
 require_relative( '../models/session.rb' )
 also_reload( '../models/*' )
+
+get '/sessions' do
+  @sessions = Session.all()
+  erb ( :"sessions/index" )
+end
+
+get '/sessions/:id' do
+  @sessions = Session.find(params['id'].to_i)
+  erb(:"sessions/show")
+end
