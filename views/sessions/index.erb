@@ -1,15 +1,5 @@
 <h1>Sessions</h1>
 
-<table>
-  <tr>
-    <th>List of upcoming classes</th>
-    <th></th>
-  </tr>
-  <br>
-  <% for session in @sessions do %>
-  <tr>
-    <td><a href="/sessions/<%= session.id %>"> <%= session.name %></a></td>
-    <td>|</td>
-  </tr>
+<% for session in @sessions %>
+ <%= session.name %>
   <% end %>
-</table>

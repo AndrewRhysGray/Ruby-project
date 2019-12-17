@@ -2,6 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Session
 
+
+
   attr_reader( :name, :id )
 
   def initialize( options )
@@ -26,16 +28,18 @@ class Session
   end
 
   def self.all()
-    sql = "SELECT FROM sessions"
+    sql = "SELECT * FROM sessions"
     results = SqlRunner.run( sql )
-    return results.map { |member| Session.new( member ) }
+    return results.map { |session| Session.new( session ) }
   end
 
   def members
     sql = "SELECT m.* FROM members m INNER JOIN bookings b ON member_id = m.id WHERE b.session_id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return members.map { |member| Member.new( member ) }
+    # results = [{}, {}]
+    return results.map { |member| Member.new( member ) }
+    # [ Member, Member ]
   end
 
 

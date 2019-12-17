@@ -4,6 +4,9 @@
 
 <ul>
   <% @session.members.each do |member| %>
-  <li><%= member.name %></li>
+  <li><%= member.first_name %></li>
+<li><%= member.last_name %></li>
+<li><%= member.age %></li>
+<li><%= member.email %></li>
   <% end %>
 </ul>

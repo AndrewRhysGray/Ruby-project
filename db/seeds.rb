@@ -3,10 +3,9 @@ require_relative("../models/booking")
 require_relative("../models/member")
 require("pry")
 
-
+Booking.delete_all()
 Member.delete_all()
 Session.delete_all()
-Booking.delete_all()
 
 member1 = Member.new({
   "first_name" => "John",
@@ -60,7 +59,7 @@ session3 = Session.new({
 session3.save()
 
 booking1 = Booking.new({
-  "member_id" =>  member1.id
+  "member_id" =>  member1.id,
   "session_id" => session1.id
 })
 

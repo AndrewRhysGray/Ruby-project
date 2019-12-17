@@ -29,7 +29,7 @@ class Booking
   def self.all()
     sql = "SELECT * FROM bookings"
     results = SqlRunner.run( sql )
-    return results.map { |biting| Booking.new( booking ) }
+    return results.map { |booking| Booking.new( booking ) }
   end
 
   def member()
@@ -49,15 +49,17 @@ class Booking
   end
 
   def self.delete_all()
-    sql = "DELETE FROM sessions"
+    sql = "DELETE FROM bookings"
     SqlRunner.run( sql )
   end
 
   def self.destroy(id)
-    sql = "DELETE FROM sessions
+    sql = "DELETE FROM bookings
     WHERE id = $1"
     values = [id]
     SqlRunner.run( sql, values )
   end
 
+# def booking.members
+#   sql = ""
 end
