@@ -9,10 +9,10 @@ class Member
   def initialize(options)
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @dob = options['dob'].to_s
+    @dob = options['dob']
     @email = options['email']
     @gender = options['gender']
-    @id = options['id'].to_i if options ['id']
+    @id = options['id'].to_i if options['id']
   end
 
 
