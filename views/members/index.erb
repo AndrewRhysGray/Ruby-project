@@ -13,6 +13,7 @@
       <ul>
         <% for member in @members %>
         <div class="members-list">
+          <button type="submit" name="submit">Update Members</button>
           <li><%= member.first_name %></li>
           <li><%= member.last_name %></li>
           <li><%= member.gender %></li>

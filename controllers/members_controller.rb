@@ -18,6 +18,11 @@ get '/members/:id' do
 end
 
 post '/members' do
-  Member.new(params['id'].to_i)
-  erb( :"members" )
+  Member.new(params).save
+  redirect to "/members"
 end
+
+# put '/members/:id' do
+#   Member.new(params['id'].to_i)
+#   erb( :"members/show" )
+# end
